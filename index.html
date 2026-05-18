@@ -1,440 +1,272 @@
 <html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
 body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
 </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Get Paid to Scroll Tiktok!</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Shein Gift Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-        background: linear-gradient(180deg, #1a1d2e 0%, #0f1118 100%);
-        color: #ffffff;
-        min-height: 100vh;
-        padding: 20px;
-        overflow-x: hidden;
-        position: relative;
-      }
+    body {
+      background: #FFF0F4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
 
-      .floating-money {
-        position: fixed;
-        font-size: 30px;
-        opacity: 0.15;
-        pointer-events: none;
-        z-index: 0;
-      }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.75rem 1.5rem;
+      max-width: 390px;
+      width: 100%;
+    }
 
-      @keyframes floatAround {
-        0% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(30px, -20px) rotate(90deg); }
-        50% { transform: translate(-20px, 20px) rotate(180deg); }
-        75% { transform: translate(40px, 10px) rotate(270deg); }
-        100% { transform: translate(0, 0) rotate(360deg); }
-      }
+    .header { text-align: center; margin-bottom: 1.5rem; }
 
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
+    .logo-wrap {
+      width: 60px;
+      height: 60px;
+      background: #E23B6A;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      animation: float 3s ease-in-out infinite;
+    }
 
-      .logo-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        margin-top: 15px;
-      }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: #E23B6A;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
 
-      .logo {
-        width: 100px;
-        height: 100px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
-      }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1A1A1A;
+      letter-spacing: -.4px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
 
-      .logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-      }
+    .subtext {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
 
-      h1 {
-        text-align: center;
-        font-size: 26px;
-        font-weight: 700;
-        background: linear-gradient(90deg, #a78bfa 0%, #c084fc 50%, #a78bfa 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 8px;
-        line-height: 1.2;
-      }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #FFF0F4;
+      color: #C9305A;
+    }
 
-      .subtitle {
-        text-align: center;
-        color: #9ca3af;
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
+    .steps {
+      background: #FFF8F9;
+      border-radius: 16px;
+      padding: 1.25rem 1.25rem 1rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-      .promo-banner {
-        background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
-        border-radius: 14px;
-        padding: 10px 14px;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
-      }
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp .5s forwards;
+    }
 
-      .promo-icon {
-        font-size: 20px;
-        animation: pulse 2s infinite;
-      }
+    .step:nth-child(1) { animation-delay: .1s; }
+    .step:nth-child(3) { animation-delay: .2s; }
+    .step:nth-child(5) { animation-delay: .3s; }
 
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-      }
+    .step-num {
+      min-width: 28px;
+      height: 28px;
+      background: #E23B6A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      flex-shrink: 0;
+    }
 
-      .promo-text {
-        color: white;
-        font-weight: 600;
-        font-size: 13px;
-      }
+    .step-content { padding-top: 2px; }
 
-      .earnings-card {
-        background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
-        border-radius: 14px;
-        padding: 12px;
-        margin-bottom: 10px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
-        border: 2px solid rgba(167, 139, 250, 0.3);
-      }
+    .step-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 2px;
+    }
 
-      .sparkle {
-        position: absolute;
-        font-size: 16px;
-        animation: sparkle-glow 2s ease-in-out infinite;
-      }
+    .step-desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
 
-      .sparkle-1 { top: 8px; left: 12px; animation-delay: 0s; }
-      .sparkle-2 { top: 8px; right: 12px; animation-delay: 0.5s; }
-      .sparkle-3 { bottom: 8px; left: 16px; animation-delay: 1s; }
-      .sparkle-4 { bottom: 8px; right: 16px; animation-delay: 1.5s; }
+    .divider {
+      height: .5px;
+      background: #F0D0D8;
+      margin-left: 42px;
+    }
 
-      @keyframes sparkle-glow {
-        0%, 100% { opacity: 0.3; transform: scale(0.8); }
-        50% { opacity: 1; transform: scale(1.2); }
-      }
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 16px 0;
+      background: #E23B6A;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .1px;
+      border: none;
+      border-radius: 980px;
+      cursor: pointer;
+      text-align: center;
+      -webkit-appearance: none;
+      appearance: none;
+      font-family: inherit;
+      transition: opacity .15s, transform .1s;
+      text-decoration: none;
+    }
 
-      .earnings-label {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 12px;
-        margin-bottom: 3px;
-      }
+    .cta:hover { background: #C9305A; }
+    .cta:active { transform: scale(.98); background: #B52750; }
 
-      .earnings-amount {
-        font-size: 32px;
-        font-weight: 900;
-        color: white;
-      }
+    .footer {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-      .cta-button {
-        background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        border: none;
-        border-radius: 14px;
-        padding: 13px;
-        width: 100%;
-        font-size: 16px;
-        font-weight: 700;
-        color: white;
-        cursor: pointer;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5), 0 0 40px rgba(167, 139, 250, 0.4);
-        text-decoration: none;
-        animation: buttonPulse 1.5s ease-in-out infinite;
-      }
+    .stars { display: flex; gap: 1px; }
+    .footer-text { font-size: 12px; color: #888; }
+    .footer-text strong { color: #1A1A1A; }
+    .dot { color: #ddd; font-size: 12px; }
 
-      @keyframes buttonPulse {
-        0%, 100% {
-          transform: scale(1);
-          box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5), 0 0 40px rgba(167, 139, 250, 0.4);
-        }
-        50% {
-          transform: scale(1.05);
-          box-shadow: 0 12px 45px rgba(124, 58, 237, 0.9), 0 0 90px rgba(167, 139, 250, 0.8);
-        }
-      }
+    .support {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #888;
+    }
 
-      .cta-button:active {
-        animation: none;
-        transform: scale(0.98);
-      }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-7px); }
+    }
 
-      .step-card {
-        background: rgba(55, 65, 81, 0.5);
-        border-radius: 14px;
-        padding: 11px 13px;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border: 1px solid rgba(75, 85, 99, 0.5);
-        position: relative;
-        padding-left: 18px;
-      }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script></head>
+<body>
 
-      .step-card::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        border-radius: 14px 0 0 14px;
-      }
+  <div class="card">
 
-      .step-number {
-        width: 32px;
-        height: 32px;
-        background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 14px;
-        flex-shrink: 0;
-      }
-
-      .step-text {
-        font-size: 14px;
-        font-weight: 600;
-        color: white;
-      }
-
-      .feature-card {
-        background: rgba(55, 65, 81, 0.5);
-        border-radius: 14px;
-        padding: 11px;
-        margin-bottom: 8px;
-        display: flex;
-        gap: 12px;
-        border: 1px solid rgba(75, 85, 99, 0.5);
-      }
-
-      .feature-icon {
-        width: 42px;
-        height: 42px;
-        background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        flex-shrink: 0;
-      }
-
-      .feature-content h3 {
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 3px;
-        color: white;
-      }
-
-      .feature-content p {
-        font-size: 12px;
-        color: #9ca3af;
-        line-height: 1.4;
-      }
-
-      .social-proof {
-        background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
-        border-radius: 14px;
-        padding: 13px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
-      }
-
-      .social-proof-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 6px;
-      }
-
-      .stars {
-        color: #fbbf24;
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-
-      .rating-text {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 13px;
-      }
-
-      .trust-badges {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 12px;
-        flex-wrap: wrap;
-      }
-
-      .badge {
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
-        padding: 5px 12px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 11px;
-        font-weight: 600;
-      }
-
-      .badge-icon {
-        font-size: 13px;
-      }
-
-      .footer {
-        text-align: center;
-        padding: 15px;
-        color: #6b7280;
-        font-size: 12px;
-      }
-    </style>
-  <script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script></head>
-
-  <body>
-    <div id="floating-money-container"><div class="floating-money" style="left: 89.9849%; top: 24.1897%; animation: 13.845s ease-in-out 4.53561s infinite normal none running floatAround;">💰</div><div class="floating-money" style="left: 95.5111%; top: 58.3286%; animation: 11.8336s ease-in-out 1.24106s infinite normal none running floatAround;">💳</div><div class="floating-money" style="left: 5.75777%; top: 11.9974%; animation: 12.4541s ease-in-out 2.31433s infinite normal none running floatAround;">💵</div><div class="floating-money" style="left: 14.6116%; top: 57.5544%; animation: 11.3386s ease-in-out 2.30395s infinite normal none running floatAround;">💸</div><div class="floating-money" style="left: 33.5511%; top: 90.6036%; animation: 11.0194s ease-in-out 2.37887s infinite normal none running floatAround;">💳</div><div class="floating-money" style="left: 85.1805%; top: 4.06892%; animation: 8.97668s ease-in-out 4.39177s infinite normal none running floatAround;">💶</div><div class="floating-money" style="left: 52.6653%; top: 27.7257%; animation: 14.807s ease-in-out 2.09435s infinite normal none running floatAround;">💵</div><div class="floating-money" style="left: 12.5128%; top: 34.9631%; animation: 13.6614s ease-in-out 4.69072s infinite normal none running floatAround;">💴</div><div class="floating-money" style="left: 64.9302%; top: 34.3328%; animation: 8.34029s ease-in-out 0.32807s infinite normal none running floatAround;">💸</div><div class="floating-money" style="left: 85.5583%; top: 63.5004%; animation: 9.99302s ease-in-out 0.898076s infinite normal none running floatAround;">💰</div><div class="floating-money" style="left: 6.26913%; top: 14.7075%; animation: 13.9419s ease-in-out 3.48309s infinite normal none running floatAround;">💴</div><div class="floating-money" style="left: 79.5336%; top: 72.7217%; animation: 13.4995s ease-in-out 1.01509s infinite normal none running floatAround;">💴</div><div class="floating-money" style="left: 92.5036%; top: 66.3078%; animation: 14.1831s ease-in-out 0.958012s infinite normal none running floatAround;">💵</div><div class="floating-money" style="left: 71.9086%; top: 18.7042%; animation: 8.40907s ease-in-out 1.14313s infinite normal none running floatAround;">💷</div><div class="floating-money" style="left: 16.7129%; top: 98.1753%; animation: 9.11694s ease-in-out 2.70804s infinite normal none running floatAround;">💷</div></div>
-
-    <div class="container">
-      <div class="logo-container">
-        <div class="logo">
-          <img src="images/pf1.png" alt="Playful Rewards">
-        </div>
+    <div class="header">
+      <div class="logo-wrap">
+        <svg width="38" height="20" viewBox="0 0 95 28" fill="white">
+          <text x="0" y="24" font-size="28" font-weight="900" font-family="'Helvetica Neue',Arial,sans-serif" letter-spacing="1">SHEIN</text>
+        </svg>
       </div>
-
-      <h1>Get Paid to Scroll Tiktok!</h1>
-      <p class="subtitle">Turn your free time into real money</p>
-
-      <div class="promo-banner">
-        <span class="promo-icon">⏰</span>
-        <span class="promo-text">Limited Time: Double Rewards for New Users!</span>
-      </div>
-
-      <div class="earnings-card">
-        <span class="sparkle sparkle-1">✨</span>
-        <span class="sparkle sparkle-2">✨</span>
-        <span class="sparkle sparkle-3">✨</span>
-        <span class="sparkle sparkle-4">✨</span>
-        <div class="earnings-label">Average Daily Earnings</div>
-        <div class="earnings-amount">$ <span id="earnings">100</span>+</div>
-      </div>
-
-      <!-- Steps -->
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-text">Download Playful Rewards App</div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-text">Complete 2-3 games to unlock the TikTok scroll option</div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-text">Scroll TikTok &amp; Get Paid Instantly for it!</div>
-      </div>
-
-      <!-- CTA Button MOVED HERE -->
-      <a href="https://affrkr.com/?lnwk=VglfAd0IA%2f%2bAUcSCBxJ%2bYdyOBD7fWFN9vQJDRoz7h5U%3d&amp;s1=A129" class="cta-button">
-        <span>🚀</span>
-        <span>START EARNING NOW</span>
-      </a>
-
-      <!-- Features -->
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-content">
-          <h3>Pro Tip: In-App Purchases to Make More Back!</h3>
-          <p>Make purchases in games and get bonus rewards!</p>
-        </div>
-      </div>
-
-      <div class="social-proof">
-        <div class="social-proof-title">
-          <span>👥</span>
-          <span>Join 500K+ Happy Users</span>
-        </div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <div class="rating-text">4.8/5 App Store Rating</div>
-      </div>
-
-      <div class="trust-badges">
-        <div class="badge"><span class="badge-icon">🔒</span><span>Secure</span></div>
-        <div class="badge"><span class="badge-icon">✅</span><span>No Fees</span></div>
-        <div class="badge"><span class="badge-icon">⚡</span><span>Instant</span></div>
-      </div>
-
-      <div class="footer"></div>
+      <p class="eyebrow">Shein</p>
+      <h1>Get your gift card bonus</h1>
+      <p class="subtext">Join thousands who've already claimed theirs.</p>
+      <span class="badge">
+        <svg width="10" height="10" viewBox="0 0 16 16" fill="#C9305A">
+          <path d="M8 0a8 8 0 110 16A8 8 0 018 0zm3.5 5L6.5 10 4 7.5 3 8.5l3.5 3.5 6-6L11.5 5z"></path>
+        </svg>
+        Verified offer
+      </span>
     </div>
 
-    <script>
-      const earningsEl = document.getElementById('earnings');
-      const duration = 3000;
-      const targetValue = 100;
-      const startTime = Date.now();
+    <div class="steps">
 
-      function animateEarnings() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeOutQuad = progress * (2 - progress);
-        const currentValue = Math.floor(easeOutQuad * targetValue);
-        earningsEl.textContent = currentValue;
-        if (progress < 1) requestAnimationFrame(animateEarnings);
-      }
-      animateEarnings();
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p class="step-title">Enter your basic info</p>
+          <p class="step-desc">Quick registration with just your name and email</p>
+        </div>
+      </div>
 
-      const moneyIcons = ['💵','💰','💸','💳','💴','💶','💷'];
-      const container = document.getElementById('floating-money-container');
+      <div class="divider"></div>
 
-      for (let i = 0; i < 15; i++) {
-        const money = document.createElement('div');
-        money.className = 'floating-money';
-        money.textContent = moneyIcons[Math.floor(Math.random() * moneyIcons.length)];
-        money.style.left = Math.random() * 100 + '%';
-        money.style.top = Math.random() * 100 + '%';
-        money.style.animation = 'floatAround ' + (8 + Math.random() * 7) + 's ease-in-out infinite';
-        money.style.animationDelay = Math.random() * 5 + 's';
-        container.appendChild(money);
-      }
-    </script>
-  
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p class="step-title">Complete a quick survey</p>
+          <p class="step-desc">Answer a few questions about your shopping preferences</p>
+        </div>
+      </div>
 
-<veepn-lock-screen><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen><simplycodes-ui style="z-index: calc(infinity); overflow: visible; position: relative; width: 0px; height: 0px; display: block; pointer-events: none; opacity: 0;" id="SCExtension-f7f09e"><style>@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Regular.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:400}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Italic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:400}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Medium.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:500}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-MediumItalic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:500}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Bold.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:700}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-BoldItalic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:700}@font-face{font-family:degular;src:url(https://images.simplycodes.com/fonts/degular/Degular-Bold.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:700}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-55Rg.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:400}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-65Md.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:500}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-75Bd.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:700}[id^=SCExtension]{all:initial;z-index:calc(Infinity);transition-property:opacity;transition-duration:.25s;position:absolute}</style></simplycodes-ui></body></html>
+      <div class="divider"></div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <p class="step-title">Select partner deals</p>
+          <p class="step-desc">Choose from 3–5 recommended offers to maximise your reward</p>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="https://ftblltrck.com/?yte=sUPJwnUeTV%2fejWm14ts5RsG39kDbg1YnvQJDRoz7h5U%3d&amp;s1=ll" class="cta">Claim your Shein reward</a>
+
+    <div class="footer">
+      <div class="stars">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+      </div>
+      <span class="footer-text">4.8 · <strong>Trustpilot</strong></span>
+      <span class="dot">·</span>
+      <div class="support">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path>
+        </svg>
+        24/7 support
+      </div>
+    </div>
+
+  </div>
+
+
+<veepn-lock-screen><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen><simplycodes-ui style="z-index: calc(infinity); overflow: visible; position: relative; width: 0px; height: 0px; display: block; pointer-events: none; opacity: 0;" id="SCExtension-ca9d43"><style>@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Regular.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:400}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Italic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:400}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Medium.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:500}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-MediumItalic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:500}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-Bold.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:normal;font-weight:700}@font-face{font-family:simply-circular;src:url(https://images.simplycodes.com/fonts/simply-circular/CircularXXWeb-BoldItalic.woff2)format("woff2");font-display:swap;font-feature-settings:"'ss08'on";font-style:italic;font-weight:700}@font-face{font-family:degular;src:url(https://images.simplycodes.com/fonts/degular/Degular-Bold.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:700}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-55Rg.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:400}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-65Md.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:500}@font-face{font-family:neue-haas-grotesk;src:url(https://images.simplycodes.com/fonts/neue-haas-grotesk/NHaasGroteskDSPro-75Bd.woff2)format("woff2");font-display:swap;font-style:normal;font-weight:700}[id^=SCExtension]{all:initial;z-index:calc(Infinity);transition-property:opacity;transition-duration:.25s;position:absolute}</style></simplycodes-ui></body></html>
